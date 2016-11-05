@@ -50,7 +50,7 @@ def get_word_info(word):
     if not word:
         return ''
     try:
-        r = urllib.urlopen("http://dict.youdao.com" + "/fsearch?q=" + word.encode('utf-8'))
+        r = urllib.urlopen("http://dict.youdao.com" + "/fsearch?q=" + word.encode('utf-8'), timeout=2)
     except IOError, e:
         return NETWORK_ERROR
     if r.getcode() == 200:
